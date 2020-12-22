@@ -26,11 +26,11 @@ print("Your values are {}".format(value_list))
 for j in range(len(value_list)):
     try:
         value = int(value_list[j])
-        print("Input {} is an integer number.\n{}".format(value,type(value)))
+        print("Input :{}, is an integer number.\n{}".format(value,type(value)))
     except ValueError:
         try:
             value = float(value_list[j])
-            print("Input {} is an float number.\ntype:{}".format(value,type(value)))
+            print("Input :{}, is an float number.\ntype:{}".format(value,type(value)))
         except ValueError:
-            print(f"Input {value_list[j]} is not a number. It's a string\ntype:{type(value_list[j])}")
+            print(f"Input :{value_list[j]}, is not a number. It's a string\ntype:{type(value_list[j])}")
 """
