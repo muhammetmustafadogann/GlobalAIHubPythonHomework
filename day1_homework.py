@@ -5,9 +5,9 @@ print(f"Welcome {name}.\ninput type:{type(name)}")
 value = int(input("Please enter a value {}:".format(name)))
 print("input type:{}".format(type(value)))
 
-sum = int(input("Enter a number to sum your value: "))
-print(f"Result: {value+sum}")
-print("result type:{}".format(type(value+sum)))
+sum1 = int(input("Enter a number to sum your value: "))
+print(f"Result: {value+sum1}")
+print("result type:{}".format(type(value+sum1)))
 
 power = int(input("Enter the power of the your value: "))
 print(f"Result: {value**power}\nresult type:{type(value**power)}")
