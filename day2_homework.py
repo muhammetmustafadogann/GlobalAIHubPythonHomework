@@ -6,7 +6,7 @@ year = int(input("Enter your date of birth as year: "))
 for i in range(1):
     user.extend([fname,lname,age,year])
     print('-'*30)
-    print(f"USER INFO\nName:{user[0]}\nLast Name:{user[1]}\nAge:{user[2]}\nBirth Year:{user[3]}")
+    print(f"USER INFO\nFirst Name:{user[0]}\nLast Name:{user[1]}\nAge:{user[2]}\nBirth Year:{user[3]}")
     if age <= 0 or year < 1850:
         print("Please enter a valid age or birth date.")
     elif age < 18:
