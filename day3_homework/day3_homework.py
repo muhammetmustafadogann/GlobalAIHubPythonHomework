@@ -5,7 +5,6 @@ def choose_word():
     word = r.choice(words)
     while "-" in word or " " in word:
         word = r.choice(words)
-        print(word)
     return word.upper()
 def check(word):
     check_list = []
@@ -24,28 +23,31 @@ word = choose_word()
 size = len(word)
 print(f"Hello {name}.Welcome to the Hangman Game.\nYou have {chance} chance.")
 print(f"The word has {size} letters.")
-print(word)
+# print(word)
 while True:
     user_letter = input("Guess a letter: ").upper()
     chance -= 1
-    if chance == 0:
-        print("You chance is over.")
-        break
+    if len(user_letter) > 1:
+        print("Please enter only one letter!")
     else:
-        if user_letter in word:
-            used_letters += user_letter + " "
-            value = str(word).count(user_letter)
-            print(f"There are {value} {user_letter} in the word.\n\
-You have used these letters: {used_letters}")
-            guess_word += user_letter*value
-            # print(guess_word)
-            print(check(word))
-            if set(guess_word) == set(word):
-                print("WINNER")
-                break
+        if chance == 0:
+            print("Your chance is over.")
+            print("The word was {}".format(word))
+            break
         else:
-            used_letters += user_letter + " "
-            print(f"You have used these letters: {used_letters}")
-            print(f"{user_letter} is not used in the word")
-            print(check(word))
-    print('-'*20)
+            if user_letter in word:
+                used_letters += user_letter + " "
+                value = str(word).count(user_letter)
+                print(f"There are {value} {user_letter} in the word.\n\
+You have used these letters: {used_letters}")
+                guess_word += user_letter*value
+                print(check(word))
+                if set(guess_word) == set(word):
+                    print(" WINNER ".center(30,'!'))
+                    break
+            else:
+                used_letters += user_letter + " "
+                print(f"You have used these letters: {used_letters}")
+                print(f"{user_letter} is not used in the word")
+                print(check(word))
+    print('-'*30)
